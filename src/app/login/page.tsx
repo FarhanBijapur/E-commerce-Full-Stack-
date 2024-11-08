@@ -1,9 +1,9 @@
-// pages/LoginPage.tsx
-"use client"
+"use client";
+
 import { useWixClient } from "@/hooks/useWixClient"; // Ensure this path is correct
 import { LoginState } from "@wix/sdk";
-import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 enum MODE {
