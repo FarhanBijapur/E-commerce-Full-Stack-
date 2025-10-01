@@ -61,8 +61,10 @@ const CheckoutPage = () => {
 
   // Check if cart.lineItems is defined and is an array
   const lineItems = cart.lineItems || [];
-  const subtotal = lineItems.reduce((sum, item) => sum + (item.price?.amount || 0) * (item.quantity || 0), 0);
-  const taxes = subtotal * 0.1; // Example tax calculation
+const subtotal = lineItems.reduce(
+  (sum, item) => sum + Number(item.price?.amount || 0) * Number(item.quantity || 0), 
+  0
+);  const taxes = subtotal * 0.1; // Example tax calculation
   const deliveryCharges = deliveryMethod === 'express' ? 20 : 5; // Example delivery charges
   const total = subtotal + taxes + deliveryCharges;
 
